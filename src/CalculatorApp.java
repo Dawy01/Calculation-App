@@ -176,4 +176,66 @@ public class CalculatorApp {
     }
 
 
+    //Financial Calculator
+    static void finCalc(){
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("\n--USD to EGP --> 1\n--EGP to USE --> 2\n--SAR to EGP --> 3\n--EGP to SAR --> 4 ");
+        System.out.print("Your choice is: ");
+        int userInput = input.nextInt();
+
+        while (userInput < 1 || userInput > 4) {
+            System.out.println("Incorrect input");
+            System.out.println("You must enter one of the following choices\n\n--USD to EGP --> 1\n--EGP to USD --> 2\n--SAR to EGP --> 3\n--EGP to SAR --> 4 ");
+            System.out.print("Your choice is: ");
+            userInput = input.nextInt();
+        }
+
+        switch (userInput) {
+            case 1:
+                System.out.print("Please enter the amount: ");
+                double value = input.nextDouble();
+                System.out.println("\n" + value + " in EGP is: " + convertUsdToegp(value)+"EGP");
+                break;
+
+            case 2:
+                System.out.print("Please enter the amount: ");
+                double amount = input.nextDouble();
+                System.out.println("\n" + amount + " in USD is: " + "$"+convertEgpTousd(amount));
+                break;
+
+            case 3:
+                System.out.print("Please enter the amount: ");
+                double number = input.nextDouble();
+                System.out.println("\n" + number + " in EGP is: " + convertSarToegp(number)+"EGP");
+                break;
+
+            case 4:
+                System.out.print("Please enter the amount: ");
+                double digit = input.nextDouble();
+                System.out.println("\n" + digit + " in SAR is: " + convertEgpTosar(digit)+"SAR");
+                break;
+
+
+        }
+
+    }
+    //Financial Calculation Methods
+    static double convertUsdToegp(double value) {
+        return value * 50;
+    }
+
+    static double convertEgpTousd(double value) {
+        return value / 50;
+    }
+
+    static double convertSarToegp(double value) {
+        return value * 13.21;
+    }
+
+    static double convertEgpTosar(double value) {
+        return value / 13.21;
+    }
+
+
 }
