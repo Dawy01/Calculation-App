@@ -220,6 +220,7 @@ public class CalculatorApp {
         }
 
     }
+
     //Financial Calculation Methods
     static double convertUsdToegp(double value) {
         return value * 50;
