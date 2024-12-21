@@ -112,5 +112,68 @@ public class CalculatorApp {
 
 
 
+    //Advanced Calculator
+    static void advCalc() {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("\n--Convert from Meter to CM --> 1\n--Convert from CM to Meter --> 2\n--Convert from Kilogram to gram --> 3\n--Convert from Gram to Kilogram --> 4 ");
+        System.out.print("Your choice is: ");
+        int userInput = input.nextInt();
+
+        while (userInput < 1 || userInput > 4) {
+            System.out.println("Incorrect input");
+            System.out.println("You must enter one of the following choices\n" +
+                    "\n--Convert from Meter to CM --> 1\n--Convert from CM to Meter --> 2\n--Convert from Kilogram to gram --> 3\n--Convert from Gram to Kilogram --> 4 ");
+            System.out.print("Your choice is: ");
+            userInput = input.nextInt();
+        }
+
+        switch (userInput) {
+            case 1:
+                System.out.print("Please enter the value: ");
+                double value = input.nextDouble();
+                System.out.println("\n" + value + " in Meter is: " + convertTometer(value)+"meter");
+                break;
+
+            case 2:
+                System.out.print("Please enter the value: ");
+                double amount = input.nextDouble();
+                System.out.println("\n" + amount + " in CM is: " + convertTocm(amount)+"Cm");
+                break;
+
+            case 3:
+                System.out.print("Please enter the value: ");
+                double number = input.nextDouble();
+                System.out.println("\n" + number + " in gram is: " + convertTogram(number)+"gram");
+                break;
+
+            case 4:
+                System.out.print("Please enter the value: ");
+                double digit = input.nextDouble();
+                System.out.println("\n" + digit + " in Kg is: " + convertToKg(digit)+"Kg");
+                break;
+
+
+        }
+
+    }
+
+    //Advanced Calculation Methods
+    static double convertTometer(double value) {
+        return value * 100;
+    }
+
+    static double convertTocm(double value) {
+        return value / 100;
+    }
+
+    static double convertTogram(double value) {
+        return value * 1000;
+    }
+
+    static double convertToKg(double value) {
+        return value / 1000;
+    }
+
 
 }
